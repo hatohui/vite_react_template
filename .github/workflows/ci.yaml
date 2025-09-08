@@ -37,13 +37,15 @@ jobs:
       - name: Notify failure
         if: failure()
         uses: Ilshidur/action-discord@master
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
           args: "🚨 CI build for **${{ github.repository }}** failed on commit `${{ github.sha }}` by ${{ github.actor }}"
 
       - name: Notify success
         if: success()
         uses: Ilshidur/action-discord@master
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
           args: "🎉 CI build for **${{ github.repository }}** succeeded on commit `${{ github.sha }}` by ${{ github.actor }}"

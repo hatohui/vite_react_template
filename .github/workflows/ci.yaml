@@ -33,3 +33,17 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Discord notification
+        if: failure()
+        uses: Ilshidur/action-discord@master
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          args: "🚨 CI build for **${{ github.repository }}** failed on commit `${{ github.sha }}` by ${{ github.actor }}"
+
+      - name: Discord notification
+        if: success()
+        uses: Ilshidur/action-discord@master
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          args: "🎉 CI build for **${{ github.repository }}** succeeded on commit `${{ github.sha }}` by ${{ github.actor }}"

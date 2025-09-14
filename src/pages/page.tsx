@@ -1,6 +1,6 @@
 import React from "react";
 
-const LandingPage = (): React.ReactNode => {
+const LandingPage = (): React.JSX.Element => {
   return <div>Landing page</div>;
 };
 

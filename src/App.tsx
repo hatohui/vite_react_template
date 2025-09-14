@@ -1,17 +1,12 @@
 import React from "react";
-import { Route, Routes } from "react-router";
-import LandingPage from "./pages/LandingPage";
 import registerGSAPPlugins from "./config/registerGSAPPlugins";
+import { RouterProvider } from "react-router";
+import router from "./config/dynamicRouter";
 
 const App = (): React.ReactNode => {
   registerGSAPPlugins();
 
-  return (
-    <Routes>
-      <Route path="/" element={<LandingPage />} />
-      <Route path="/about" />
-    </Routes>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;

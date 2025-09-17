@@ -1,73 +1,76 @@
-# Vite + React Template
+yarn
 
-A minimal, fast, and modern starter template using Vite and React — ready for building single-page applications.
+# Vite + React Modern Starter
+
+A fast, opinionated template for building single-page applications with Vite, React, and a powerful modern stack.
 
 ## Features
 
-- Vite for fast dev server and build
-- React (with JSX/TSX support if you enable TypeScript)
-- Opinionated structure and scripts for common workflows
-- Configurable environment via `.env` files
+- ⚡ Vite for instant dev server and optimized builds
+- ⚛️ React 19 for UI development
+- 🗂️ File-based routing (see `src/config/dynamicRouter.tsx`)
+- 🪝 Zustand for state management
+- 🧩 Zod for schema validation
+- 🔗 TanStack Query for data fetching and caching
+- 🎬 GSAP for advanced animations
+- 🌐 i18next for internationalization
+- 🛠️ Tailwind CSS for utility-first styling
 
-## Quick start
+## Getting Started
 
-1. Clone or copy this template into your project directory.
-2. Install dependencies:
+1. **Install dependencies:**
 
-```bash
-npm install
-# or
-yarn
-# or
-pnpm install
-```
+   ```bash
+   npm install
+   # or
+   yarn
+   # or
+   pnpm install
+   ```
 
-3. Start development server:
+2. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
 
-```bash
-npm run dev
-```
+## Scripts
 
-## Available scripts
+- `dev` — Start Vite dev server
+- `build` — Build for production
+- `preview` — Preview production build locally
+- `lint` — Run ESLint
 
-- `dev` — start Vite dev server
-- `build` — build for production
-- `preview` — locally preview production build
-- `lint` — run linter (if configured)
-- `format` — run code formatter (if configured)
-- `test` — run tests (if configured)
-
-Example:
-
-```bash
-npm run dev
-npm run build
-npm run preview
-```
-
-## Project structure
-
-A typical layout:
+## Project Structure
 
 ```
-/src
-  /assets     # images, fonts, static media
-  /components # React components
-  /pages      # route pages
-  main.jsx    # app entry
+src/
+  components/      # React components
+  config/          # App configuration (routing, i18n, GSAP plugins)
+  hooks/           # Custom React hooks
+  languages/       # i18n language files
+  pages/           # Route pages (file-based routing)
+  services/        # API and utilities
+  main.tsx         # App entry point
+  global.css       # Global styles
 index.html
-vite.config.js
+vite.config.ts
 package.json
 ```
 
+## Routing
+
+- File-based routing is handled via `src/config/dynamicRouter.tsx`.
+- Pages are defined in `src/pages/` as `page.tsx` files.
+- Layouts are supported via `layout.tsx` files.
+
 ## Environment
 
-- Use `.env.local`, `.env.development`, and `.env.production` to manage environment-specific variables.
-- Prefix client-exposed vars with `VITE_` (Vite requirement).
+- Use `.env.local`, `.env.development`, and `.env.production` for environment variables.
+- Prefix client-exposed variables with `VITE_`.
 
 ## Deployment
 
-Build and deploy the `dist` directory to any static hosting:
+Build and deploy the `dist` directory to any static host:
 
 ```bash
 npm run build
@@ -76,13 +79,9 @@ npm run build
 
 ## Customization
 
-- Swap styling solutions (CSS, Tailwind, styled-components) as needed.
-- Add TypeScript by renaming files to `.ts/.tsx` and installing types + tsconfig.
-
-## Contributing
-
-This is a template — adapt as needed. Pull requests and suggestions welcome if you intend to share improvements.
+- Swap styling solutions as needed.
+- Add or remove libraries to fit your workflow.
 
 ## License
 
-Use and modify freely. Add a license file if required for your project.
+MIT (or add your own license file).

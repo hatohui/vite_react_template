@@ -1,5 +1,3 @@
-yarn
-
 # Vite + React Modern Starter
 
 A fast, opinionated template for building single-page applications with Vite, React, and a powerful modern stack.
@@ -20,17 +18,25 @@ A fast, opinionated template for building single-page applications with Vite, Re
 
 1. **Install dependencies:**
 
+   > **Recommendation:** Choose one package manager (npm, yarn, or pnpm) for your team and stick to it. Mixing package managers can cause lockfile conflicts and unexpected bugs.
+
    ```bash
    npm install
    # or
-   yarn
+   yarn install
    # or
    pnpm install
    ```
 
+   > Commit only one lockfile (`package-lock.json`, `yarn.lock`, or `pnpm-lock.yaml`) to your repository.
+
 2. **Start the development server:**
    ```bash
    npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
    ```
 
 ## Scripts
